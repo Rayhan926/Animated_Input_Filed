@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.input_width_wrap {
+  width: 200px;
+}
+
+.input_filed_wrap {
+  width: 100%;
+  padding: 1.5px;
+  position: relative;
+}
+
+.input_filed_wrap .input_animation_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input_filed_wrap .input_animation_box span {
+  position: absolute;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.input_filed_wrap .input_animation_box span:nth-child(1) {
+  width: 0%;
+  top: 0;
+  left: 48px;
+  height: 50%;
+  background-color: #0059ff;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.input_filed_wrap .input_animation_box span:nth-child(2) {
+  width: 0%;
+  bottom: 0;
+  right: 0;
+  height: 50%;
+  background-color: #0059ff;
+  -webkit-transition-delay: 0.37s;
+          transition-delay: 0.37s;
+}
+
+.input_filed_wrap .input_animation_box span:nth-child(3) {
+  bottom: 50%;
+  left: 0;
+  width: 10%;
+  height: 0%;
+  background-color: #0059ff;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.input_filed_wrap .input_box {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+  border-radius: 2px;
+}
+
+.input_filed_wrap .input_box input {
+  width: 100%;
+  font-size: 16px;
+  padding: 7px 10px;
+  padding-top: 10px;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  color: #222;
+  background-color: transparent;
+  -webkit-transition: padding 0.2s 0.65s ease;
+  transition: padding 0.2s 0.65s ease;
+}
+
+.input_filed_wrap .input_box label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: inline-block;
+  -webkit-transition: top 150ms 0.6s linear, font-size 150ms 0.6s linear;
+  transition: top 150ms 0.6s linear, font-size 150ms 0.6s linear;
+  color: #666;
+  font-size: 15px;
+  padding: 0 3px;
+  white-space: nowrap;
+  background-color: #fff;
+}
+
+.input_filed_wrap .input_box label::before {
+  content: "Name";
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 0;
+  white-space: nowrap;
+  -webkit-transition: width 0.2s ease-in-out, font-size 150ms 0.6s linear;
+  transition: width 0.2s ease-in-out, font-size 150ms 0.6s linear;
+  color: #0059ff;
+  overflow: hidden;
+}
+
+.input_filed_wrap.focused .input_animation_box span:nth-child(1) {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+  width: 100%;
+}
+
+.input_filed_wrap.focused .input_animation_box span:nth-child(2) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  width: 100%;
+}
+
+.input_filed_wrap.focused .input_animation_box span:nth-child(3) {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+  height: 100%;
+}
+
+.input_filed_wrap.focused label {
+  top: 0;
+  font-size: 12px;
+  -webkit-transition: top 150ms linear, font-size 150ms linear;
+  transition: top 150ms linear, font-size 150ms linear;
+}
+
+.input_filed_wrap.focused label::before {
+  width: 100%;
+  -webkit-transition: width 0.3s 0.5s ease-in-out, font-size 150ms linear;
+  transition: width 0.3s 0.5s ease-in-out, font-size 150ms linear;
+}
+
+.borderLight .input_animation_box span:nth-child(1) {
+  height: 0 !important;
+}
+
+.borderLight .input_animation_box span:nth-child(2) {
+  height: 0 !important;
+}
+
+.borderLight .input_animation_box span:nth-child(3) {
+  width: 0 !important;
+}
+
+.borderLight .input_box label {
+  color: #999 !important;
+}
+
+.borderLight .input_box label::before {
+  color: #999 !important;
+}
+
+.inputFilled .input_box label {
+  top: 0;
+  font-size: 12px;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.demo_wrap {
+  width: 55%;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3), 0 0 1px 0 lightgray;
+          box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3), 0 0 1px 0 lightgray;
+  padding: 15px;
+}
+
+.demo_wrap h3 {
+  text-align: center;
+  padding: 15px 0;
+  padding-top: 0;
+}
+
+.demo_wrap .input_row {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.demo_wrap .input_row:last-child {
+  margin-bottom: 0;
+}
+
+.demo_wrap .col_2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+
+.name_label::before {
+  content: "Your Name" !important;
+}
+
+.email_label::before {
+  content: "Your Email" !important;
+}
+
+.password_label::before {
+  content: "Your Password" !important;
+}
+
+.address_label::before {
+  content: "Address" !important;
+}
+
+.phone_label::before {
+  content: "Phone" !important;
+}
+
+@media (max-width: 768px) {
+  .demo_wrap {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .demo_wrap {
+    width: 98%;
+  }
+  .input_row {
+    margin-bottom: 0;
+  }
+  .input_filed_wrap {
+    margin-bottom: 8px;
+  }
+  .input_filed_wrap:last-child {
+    margin-bottom: 0;
+  }
+  .col_2 {
+    display: block !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
