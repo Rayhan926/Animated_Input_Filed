@@ -136,13 +136,6 @@ $paddingInput: 10px;
       }
     }
 
-    // .input_box {
-    //   input {
-    //     padding-top: 10px;
-    //     transition: 0.1s 0.5s ease-in-out;
-    //   }
-    // }
-
     label {
       top: 0;
       font-size: 12px;
@@ -158,7 +151,6 @@ $paddingInput: 10px;
 .borderLight {
   .input_animation_box {
     span {
-      // transition: 2s linear !important;
       &:nth-child(1) {
         height: 0 !important;
       }
@@ -182,8 +174,6 @@ $paddingInput: 10px;
 }
 
 .inputFilled {
-  .input_animation_box {
-  }
   .input_box {
     label {
       top: 0;
@@ -194,6 +184,8 @@ $paddingInput: 10px;
 }
 
 // Main Css For Input Filed End Here
+
+// Extra Css Start
 
 .demo_wrap {
   width: 55%;
@@ -262,3 +254,5 @@ $paddingInput: 10px;
     display: block !important;
   }
 }
+
+// Extra Css End
