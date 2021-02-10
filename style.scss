@@ -23,8 +23,8 @@ body {
 
 // Main Css For Input Filed Start From Here
 $borderColor: rgb(0, 89, 255);
-$borderRadius: 4px;
-$paddingInput: 10px;
+$borderRadius: 50px;
+$paddingInput: 20px;
 .input_filed_wrap {
   width: 100%;
   padding: 1.5px;
@@ -41,15 +41,15 @@ $paddingInput: 10px;
 
     span {
       position: absolute;
-      transition: 0.2s ease-in-out;
+      transition: 0.1s ease-in-out;
 
       &:nth-child(1) {
         width: 0%;
         top: 0;
-        left: 48px;
+        left: 40px;
         height: 50%;
         background-color: $borderColor;
-        transition-delay: 0.5s;
+        transition-delay: 0.3s;
       }
       &:nth-child(2) {
         width: 0%;
@@ -57,15 +57,15 @@ $paddingInput: 10px;
         right: 0;
         height: 50%;
         background-color: $borderColor;
-        transition-delay: 0.37s;
+        transition-delay: 0.2s;
       }
       &:nth-child(3) {
         bottom: 50%;
         left: 0;
-        width: 10%;
+        width: 15%;
         height: 0%;
         background-color: $borderColor;
-        transition-delay: 0.2s;
+        transition-delay: 0.1s;
       }
     }
   }
@@ -80,7 +80,7 @@ $paddingInput: 10px;
       width: 100%;
       font-size: 16px;
       padding: 7px $paddingInput;
-      padding-top: 10px;
+      padding-top: 12px;
       border: none;
       outline: none;
       box-shadow: none !important;
@@ -98,23 +98,24 @@ $paddingInput: 10px;
       pointer-events: none;
       transform: translateY(-50%);
       display: inline-block;
-      transition: top 150ms 0.6s linear, font-size 150ms 0.6s linear;
+      transition: top 100ms 0.4s ease-in-out, font-size 100ms 0.4s ease-in-out;
       color: #666;
       font-size: 15px;
       padding: 0 3px;
       white-space: nowrap;
       background-color: #fff;
 
-      &::before {
-        content: "Name";
+      span {
         position: absolute;
         top: 0;
-        left: 3px;
-        width: 0;
-        white-space: nowrap;
-        transition: width 0.2s ease-in-out, font-size 150ms 0.6s linear;
+        left: 0;
         color: $borderColor;
+        padding: 0 3px;
+        transition: width 0.1s ease-in-out, font-size 100ms 0.4s ease-in-out;
+        white-space: nowrap;
         overflow: hidden;
+        width: 0px;
+        opacity: 0;
       }
     }
   }
@@ -122,6 +123,7 @@ $paddingInput: 10px;
   &.focused {
     .input_animation_box {
       span {
+        transition: 0.2s ease-in-out;
         &:nth-child(1) {
           transition-delay: 0.15s;
           width: 100%;
@@ -140,10 +142,13 @@ $paddingInput: 10px;
     label {
       top: 0;
       font-size: 12px;
-      transition: top 150ms linear, font-size 150ms linear;
-      &::before {
+      transition: top 150ms ease-in-out, font-size 150ms ease-in-out;
+
+      span {
         width: 100%;
-        transition: width 0.3s 0.5s ease-in-out, font-size 150ms linear;
+        opacity: 1;
+        transition: width 0.5s 0.5s ease-in-out, font-size 150ms ease-in-out,
+          opacity 0s 0.5s;
       }
     }
   }
@@ -213,21 +218,6 @@ $paddingInput: 10px;
     grid-template-columns: auto auto;
     grid-gap: 10px;
   }
-}
-.name_label::before {
-  content: "Your Name" !important;
-}
-.email_label::before {
-  content: "Your Email" !important;
-}
-.password_label::before {
-  content: "Your Password" !important;
-}
-.address_label::before {
-  content: "Address" !important;
-}
-.phone_label::before {
-  content: "Phone" !important;
 }
 
 @media (max-width: 768px) {
