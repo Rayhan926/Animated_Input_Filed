@@ -20,4 +20,21 @@ $(document).ready(function () {
         : null;
     });
   }
+
+  // Simple Validation Ignore It
+
+  $(".submit").click(function () {
+    let firstBlank = "";
+    $(".input_filed_wrap input").each(function () {
+      let val = $.trim($(this).val());
+      if (val === "") {
+        if (firstBlank == "") firstBlank = $(this);
+        $(this).parents(parentDiv).addClass("error");
+      } else {
+        $(this).parents(parentDiv).removeClass("error");
+      }
+    });
+    firstBlank.focus();
+    firstBlank = "";
+  });
 });

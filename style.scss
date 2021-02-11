@@ -22,9 +22,10 @@ body {
 }
 
 // Main Css For Input Filed Start From Here
+
 $borderColor: rgb(0, 89, 255);
-$borderRadius: 50px;
-$paddingInput: 20px;
+$borderRadius: 3px;
+$paddingInput: 10px;
 .input_filed_wrap {
   width: 100%;
   padding: 1.5px;
@@ -190,6 +191,39 @@ $paddingInput: 20px;
 }
 
 // Main Css For Input Filed End Here
+
+// Input FIled With Error Start
+
+.error {
+  .input_box {
+    label {
+      transition-delay: 0s !important;
+      span {
+        color: red;
+        width: 100% !important;
+        transition-delay: 0s !important;
+      }
+    }
+  }
+  .input_animation_box {
+    span {
+      // transition: 0.3s ease-in !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-color: red !important;
+    }
+  }
+
+  &.inputFilled {
+    .input_box {
+      label {
+        color: red !important;
+      }
+    }
+  }
+}
+
+// Input FIled With Error End
 
 // Extra Css Start
 
